@@ -1,0 +1,7 @@
+node_modules
+dist
+mockups
+yarn.lock
+
+AGENTS.md
+docs

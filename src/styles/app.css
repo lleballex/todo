@@ -1,0 +1,598 @@
+button {
+  cursor: pointer;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #3939ed;
+  outline-offset: 3px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.brand,
+.side-nav button,
+.month-picker,
+.day,
+.task-open,
+.section-button,
+.menu button,
+.month-controls button,
+.month-grid button {
+  border: 0;
+  background: none;
+  color: inherit;
+}
+.brand {
+  padding: 0;
+}
+.side-nav button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #6b6b74;
+  font-size: 14px;
+  font-weight: 650;
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: left;
+}
+.side-nav button.is-current {
+  background: #f0f0f4;
+  color: #101014;
+}
+.side-nav button span {
+  font-size: 14px;
+}
+.task-open {
+  text-align: left;
+  padding: 0;
+}
+.task-open span {
+  display: block;
+}
+.section-button {
+  display: block;
+  text-align: left;
+  padding: 0;
+}
+.progress-empty {
+  font-size: 32px !important;
+  letter-spacing: -1px !important;
+  margin-top: 8px;
+}
+.menu button {
+  width: 100%;
+  padding: 16px 0;
+  text-align: left;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+}
+.month-picker {
+  font-weight: 700;
+}
+.day {
+  padding: 0;
+}
+.timeline .event {
+  margin-bottom: 6px;
+}
+.timeline-row:has(.event) {
+  min-height: 67px;
+}
+.timeline .line {
+  min-width: 0;
+}
+.modal-layer {
+  position: fixed;
+  inset: 0;
+  background: #1010148c;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fade-in 0.18s ease;
+}
+.modal-layer .sheet {
+  max-width: 560px;
+  max-height: min(94dvh, 900px);
+  padding-bottom: max(30px, env(safe-area-inset-bottom));
+  animation: slide-in 0.25s ease;
+}
+.month-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+.month-controls button {
+  font-size: 28px;
+  padding: 3px 12px;
+}
+.month-grid button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.month-grid .date-selected {
+  background: #3535ef;
+  color: white;
+}
+.month-grid .outside {
+  color: #999;
+}
+.notice {
+  z-index: 5;
+  bottom: max(24px, env(safe-area-inset-bottom));
+}
+.notice button {
+  border: 0;
+  background: none;
+  color: #a9a9ff;
+  font-weight: 700;
+}
+.storage-warning {
+  position: fixed;
+  z-index: 20;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 600px);
+  background: #fff1ee;
+  color: #762f2a;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px #0002;
+}
+.storage-warning button {
+  float: right;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+}
+.fab {
+  bottom: max(28px, env(safe-area-inset-bottom));
+}
+.intro-panel,
+.content,
+.calendar-body {
+  animation: fade-in 0.2s ease;
+}
+.check,
+.tab,
+.icon-button,
+.primary,
+.secondary,
+.fab {
+  transition:
+    background-color 0.18s,
+    color 0.18s,
+    transform 0.18s;
+}
+.fab:active,
+.icon-button:active,
+.primary:active {
+  transform: scale(0.95);
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(24px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 760px) {
+  .sidebar {
+    display: none;
+  }
+  .welcome-view .intro {
+    max-width: 480px;
+  }
+  .desktop-view .app-shell {
+    display: block;
+  }
+  .phone {
+    width: 100%;
+  }
+}
+@media (min-width: 761px) {
+  .desktop-view {
+    min-width: 760px;
+  }
+  .modal-layer {
+    align-items: center;
+    padding: 32px;
+  }
+  .modal-layer .sheet {
+    border-radius: 25px;
+    padding: 24px 32px 30px;
+  }
+  .modal-layer .handle {
+    display: none;
+  }
+  .welcome-view {
+    background: #fff;
+  }
+  .welcome-view .intro {
+    max-width: none;
+    min-height: 100dvh;
+    border-radius: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .welcome-view .intro-art {
+    height: 100%;
+    min-height: 650px;
+  }
+  .welcome-view .intro-panel {
+    border-radius: 0;
+    padding: 11% 10% 8%;
+  }
+  .welcome-view .intro-panel h1 {
+    font-size: clamp(55px, 6vw, 90px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Icons and calendar geometry follow the desktop and mobile mockups. */
+.side-nav .nav-icon {
+  width: 24px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+.side-nav .nav-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.side-nav .nav-icon svg.dots {
+  fill: currentColor;
+  stroke: none;
+}
+.chevron-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.section-chevron {
+  display: inline-flex;
+  vertical-align: middle;
+  color: #717178;
+  transition: transform 0.18s ease;
+}
+.section-chevron.is-collapsed {
+  transform: rotate(-90deg);
+}
+.month-controls {
+  justify-content: flex-start;
+  gap: 8px;
+  color: #717178;
+  font-size: 14px;
+}
+.month-controls button {
+  padding: 4px;
+  display: grid;
+  place-items: center;
+  color: inherit;
+}
+.desktop-month {
+  display: none;
+}
+.selected-date {
+  display: none;
+}
+@media (min-width: 761px) {
+  .desktop-calendar .week {
+    display: none;
+  }
+  .desktop-calendar .desktop-month {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px 2px;
+    max-width: 420px;
+    margin-top: 38px;
+    text-align: center;
+    align-items: center;
+  }
+  .desktop-month > * {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    min-width: 0;
+    font-size: 14px;
+    border-radius: 50%;
+  }
+  .desktop-month button {
+    border: 0;
+    background: transparent;
+    color: inherit;
+  }
+  .desktop-month button:hover {
+    background: #28282f;
+  }
+  .desktop-month .month-weekday {
+    font-size: 11px;
+    color: #aaaab2;
+    aspect-ratio: auto;
+    padding-bottom: 8px;
+  }
+  .desktop-month .month-outside {
+    color: #686870;
+  }
+  .desktop-month .month-selected,
+  .desktop-month .month-selected:hover {
+    background: #3939ed;
+    color: #fff;
+    font-weight: 700;
+  }
+  .selected-date {
+    display: block;
+  }
+  .content > .nav-back:first-child:has(+ .page-title) {
+  }
+}
+.action-menu button {
+  border-bottom: 1px solid #ddd;
+  font-weight: 400;
+}
+.action-menu button:last-child {
+  border-bottom: 0;
+}
+.action-menu .action-delete {
+  color: #a44949;
+}
+.primary-danger {
+  background: #a44949;
+}
+.menu-mobile-top {
+  display: flex;
+}
+@media (min-width: 761px) {
+  .menu-mobile-top {
+    display: none;
+  }
+  .home-content > .task-group {
+    max-width: 780px;
+  }
+}
+@media (min-width: 1100px) {
+  .home-content > .task-group {
+    max-width: calc(68% - 44px);
+  }
+}
+@media (min-width: 761px) {
+  .modal-layer {
+    padding-left: 217px;
+  }
+}
+@media (min-width: 1051px) {
+  .modal-layer {
+    padding-left: 256px;
+  }
+}
+.storage-inline button {
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  float: right;
+}
+@media (min-width: 1100px) {
+  .home-content > .storage-inline {
+    max-width: calc(68% - 44px);
+  }
+}
+
+/* Keep the sidebar artwork, floating action and form feedback aligned with the mockups. */
+.side-bottom p {
+  margin: 1em 0;
+}
+.task-form .warning + .primary {
+  margin-top: 15px;
+}
+@media (min-width: 761px) {
+  .fab {
+    right: 28px;
+    bottom: 28px;
+  }
+}
+
+@media (min-width: 761px) {
+  .header-actions {
+    display: none;
+  }
+}
+
+/* Match the native heading and paragraph spacing used in the mockups. */
+.page-title,
+.sheet-head h1,
+.empty h2 {
+  font-weight: 700;
+}
+.empty h2 {
+  margin: 0.83em 0;
+}
+.content > .description,
+.sheet > .description {
+  margin: 1em 0;
+}
+@media (min-width: 761px) {
+  .modal-layer .sheet {
+    box-shadow: 0 24px 75px #0003;
+  }
+  .modal-layer .sheet-head {
+    margin-bottom: 8px;
+  }
+}
+.trash-content,
+.modal-layer .sheet {
+  line-height: normal;
+}
+@media (min-width: 761px) {
+  .modal-layer .sheet {
+    max-height: calc(100dvh - 100px);
+  }
+  .month-grid button {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* The mockups use browser typography, including bold section headings. */
+.section-title {
+  font-weight: 700;
+}
+.icon-button,
+.fab,
+.check {
+  padding: 0;
+}
+.day {
+  color: #8e8e95;
+}
+.day.selected {
+  color: #fff;
+}
+.switch,
+.empty-action {
+  border: 0;
+}
+@media (max-width: 760px) {
+  .calendar-body .empty-action {
+    display: none;
+  }
+}
+
+/* Desktop workspace fills the viewport; the frame in the mockups is illustrative. */
+:root {
+  background: #fff;
+}
+@media (min-width: 761px) {
+  .app-shell {
+    max-width: none;
+    min-height: 100dvh;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .sidebar,
+  .phone {
+    min-height: 100dvh;
+  }
+  .modal-layer {
+    padding-left: 217px;
+    padding-right: 32px;
+  }
+}
+@media (min-width: 1051px) {
+  .modal-layer {
+    padding-left: 256px;
+  }
+}
+@media (min-width: 1100px) {
+  .desktop-calendar .cal-header {
+    min-height: 100dvh;
+  }
+}
+
+.navigation-menu button:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+@media (min-width: 761px) {
+  .navigation-menu .mobile-menu-link {
+    display: none;
+  }
+}
+
+.completion-celebration {
+  position: fixed;
+  height: 0;
+  z-index: 8;
+  pointer-events: none;
+}
+.completion-particle {
+  position: absolute;
+  width: 6px;
+  height: 9px;
+  border-radius: 1px;
+  background: var(--particle-color);
+  opacity: 0;
+  animation: celebrate-task 1.05s ease-out var(--particle-delay) both;
+  will-change: transform, opacity;
+}
+.completion-particle:nth-child(4n) {
+  width: 4px;
+  height: 11px;
+  border-radius: 40%;
+}
+.completion-particle:nth-child(4n + 1) {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.completion-particle:nth-child(4n + 2) {
+  width: 7px;
+  height: 5px;
+  border-radius: 1px 3px 1px 3px;
+}
+@keyframes celebrate-task {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.3) rotate(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 1;
+    transform: translate(var(--particle-arc-x), var(--particle-peak-y)) scale(1)
+      rotate(var(--particle-rotation));
+    animation-timing-function: ease-in;
+  }
+  70% {
+    opacity: 1;
+    transform: translate(var(--particle-sway-x), var(--particle-sway-y))
+      scale(0.85) rotate(var(--particle-rotation));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--particle-x), var(--particle-fall-y)) scale(0.65)
+      rotate(var(--particle-end-rotation));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .completion-celebration {
+    display: none;
+  }
+}
